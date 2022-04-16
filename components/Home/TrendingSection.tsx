@@ -5,7 +5,6 @@ interface IProps {
    trendingNow: Movie[]
 }
 const TrendingSection = ({trendingNow}: IProps) => {
-   const [movies, setMovies] = useState<IProps | null>(null)
 
    console.log(trendingNow)
    return (
