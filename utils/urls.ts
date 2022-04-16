@@ -1,0 +1,1 @@
+export const movieBaseUrl = 'https://image.tmdb.org/t/p/original';

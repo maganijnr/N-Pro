@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+   body{
+      @apply bg-black
+   }
+   body::-webkit-scrollbar{
+      width: 0px;
+   }
+}
+
+@layer components{
+   /* Navbar styles */
+   .headerLink{
+      @apply font-bold mx-4 cursor-pointer text-lg hover:text-red-500 duration-75;
+   }
+
+   .headerLink:first-child{
+      @apply ml-0
+   }
+
+   .headerLink:last-child{
+      @apply mr-0
+   }
+
+   .searchIcon{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+   }
+
+   .userContainer{
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+   }
+
+   /* End of Navbar styles */
+
+   /* Banner Styles */
+   .bannerBtn{
+      @apply flex px-5 py-3 mx-4 items-center;
+   }
+
+   .bannerBtnIcon{
+      @apply mr-2
+   }
+   /* End of Banner Styles */
+
+   .moviesContainer::-webkit-scrollbar{
+      width: 0px;
+      height: 0px;
+   }
+}
