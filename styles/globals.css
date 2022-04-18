@@ -43,7 +43,7 @@
 
    /* Banner Styles */
    .bannerBtn{
-      @apply flex px-5 py-3 mx-4 items-center;
+      @apply flex px-5 py-3 items-center;
    }
 
    .bannerBtnIcon{

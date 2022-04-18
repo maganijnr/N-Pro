@@ -26,18 +26,18 @@ const Banner = ({netflixOriginals}:IProps) => {
                objectFit='cover'
             />
          </div>
-         <h2 className="text-white z-[3] relative text-4xl sm:text-5xl lg:text-6xl font-extrabold pl-4">
+         <h2 className="text-white z-[3] relative text-4xl sm:text-5xl lg:text-6xl font-extrabold pl-10">
             {movie?.title || movie?.original_name || movie?.name }
          </h2>
-         <p className="text-white z-[3] max-w-md lg:max-w-xl font-medium pl-4">
+         <p className="text-white z-[3] max-w-md lg:max-w-xl font-medium pl-10">
             {movie?.overview}
          </p>
 
-         <div className="mt-5 z-[3] flex">
-            <button className="bannerBtn bg-white rounded-md font-bold text-xl hover:opacity-80 duration-75">
+         <div className="mt-5 z-[3] flex pl-10">
+            <button className="bannerBtn bg-white rounded-md font-bold text-xl hover:opacity-80 duration-75 mr-4">
                <FaPlay className="bannerBtnIcon" fontSize={20}/> Play
             </button>
-            <button className="bannerBtn rounded-md font-bold text-xl text-white bg-[#4C4341] hover:opacity-80 duration-75">
+            <button className="bannerBtn rounded-md font-bold text-xl text-white bg-[#4C4341] hover:opacity-80 duration-75 ml-4">
                <FaInfoCircle className="bannerBtnIcon" fontSize={20}/> More Info
             </button>
          </div>

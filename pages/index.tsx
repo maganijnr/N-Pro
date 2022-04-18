@@ -6,6 +6,7 @@ import {Movie, SectionTitle} from '../typing'
 import Navbar from '../components/Home/Navbar'
 import Banner from '../components/Home/Banner'
 import TrendingSection from '../components/Home/TrendingSection'
+import TopRatedSection from '../components/Home/TopRatedSection'
 
 
 interface IProps { 
@@ -30,6 +31,7 @@ const Home = ({netflixOriginals, topRated, trendingNow, actionMovies, romanceMov
       <Navbar/>
       <main className="relative">
         <Banner netflixOriginals={netflixOriginals}/>
+        <TopRatedSection topRated={topRated}/>
         <TrendingSection trendingNow={trendingNow}/>
       </main>
     </div>
