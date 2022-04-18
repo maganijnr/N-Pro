@@ -5,8 +5,7 @@ import {Movie, SectionTitle} from '../typing'
 //Components
 import Navbar from '../components/Home/Navbar'
 import Banner from '../components/Home/Banner'
-import TrendingSection from '../components/Home/TrendingSection'
-import TopRatedSection from '../components/Home/TopRatedSection'
+import RowSection from '../components/Home/RowSection'
 
 
 interface IProps { 
@@ -19,7 +18,7 @@ interface IProps {
   romanceMovies: Movie[]
   documentaries: Movie[]
 }
-const Home = ({netflixOriginals, topRated, trendingNow, actionMovies, romanceMovies, documentaries}: IProps) => {
+const Home = ({netflixOriginals, topRated, trendingNow, actionMovies, romanceMovies, documentaries, comedyMovies, horrorMovies}: IProps) => {
   return (
     <div className="relative h-screen">
       <Head>
@@ -31,8 +30,13 @@ const Home = ({netflixOriginals, topRated, trendingNow, actionMovies, romanceMov
       <Navbar/>
       <main className="relative">
         <Banner netflixOriginals={netflixOriginals}/>
-        <TopRatedSection topRated={topRated}/>
-        <TrendingSection trendingNow={trendingNow}/>
+        <RowSection title="Top Rated Movies" movie={topRated}/>
+        <RowSection title="Trending Shows" movie={trendingNow}/>
+        <RowSection title="Action Movies" movie={actionMovies}/>
+        <RowSection title="Romance Movies" movie={romanceMovies}/>
+        <RowSection title="Comedy Movies" movie={comedyMovies}/>
+        <RowSection title="Horror Movies" movie={horrorMovies}/>
+        <RowSection title="Documentaries" movie={documentaries}/>
       </main>
     </div>
   )

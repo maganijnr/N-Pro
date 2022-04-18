@@ -24,9 +24,10 @@ const Banner = ({netflixOriginals}:IProps) => {
                layout="fill" 
                alt="banner image"
                objectFit='cover'
+               objectPosition="center"
             />
          </div>
-         <h2 className="text-white z-[3] relative text-4xl sm:text-5xl lg:text-6xl font-extrabold pl-10">
+         <h2 className="text-white z-[3] relative text-4xl sm:text-5xl lg:text-6xl font-extrabold px-10 md:pl-10">
             {movie?.title || movie?.original_name || movie?.name }
          </h2>
          <p className="text-white z-[3] max-w-md lg:max-w-xl font-medium pl-10">
