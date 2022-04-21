@@ -79,7 +79,7 @@ const Login = () => {
                className="inlie-block w-full text-white bg-red-600 py-3.5 px-5 focus:bg-red-700 hover:bg-red-700 text-xl font-semibold mt-10 rounded"
                type="submit"
             >
-               Sign In
+               {login ? "Sign In" : "Sign Up"}
             </button>
 
             {
