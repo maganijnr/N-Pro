@@ -35,3 +35,8 @@ export interface Element {
 export interface SectionTitle {
    sectionTitle: string
 }
+
+export interface LoginProps {
+   email: string
+   password: string
+}

@@ -39,6 +39,24 @@
       cursor: pointer;
    }
 
+   .menu-items{
+      display: none
+   }
+
+   .menu:hover > .menu-items{
+      display: flex;
+      flex-direction: column;
+      margin-right: 50px;
+      top: 40px;
+      width: 100px;
+      text-align: center;
+   }
+
+   .menu-items > .button{
+      font-weight: 600;
+      margin-top: 5px;
+   }
+
    /* End of Navbar styles */
 
    /* Banner Styles */
@@ -54,5 +72,25 @@
    .moviesContainer::-webkit-scrollbar{
       width: 0px;
       height: 0px;
+   }
+
+   /*Login styles*/
+   .loginInput{
+      @apply w-full rounded outline-none bg-[#333] px-5 py-3.5 placeholder-[gray] focus:bg-[#454545] text-white;
+   }
+   /*End of Login Styles*/
+
+   .modal-body{
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      width: 800px;
+      height: 600px;
+      background: black;
+      display: flex;
+      flex-direction: column;
+      color: #fff;
    }
 }

@@ -6,7 +6,7 @@ import {Movie, SectionTitle} from '../typing'
 import Navbar from '../components/Home/Navbar'
 import Banner from '../components/Home/Banner'
 import RowSection from '../components/Home/RowSection'
-
+import Modal from '../components/Home/Modal'
 
 interface IProps { 
   netflixOriginals: Movie[]
@@ -38,6 +38,7 @@ const Home = ({netflixOriginals, topRated, trendingNow, actionMovies, romanceMov
         <RowSection title="Horror Movies" movie={horrorMovies}/>
         <RowSection title="Documentaries" movie={documentaries}/>
       </main>
+      {/* <Modal/> */}
     </div>
   )
 }
