@@ -76,7 +76,7 @@ const ModalComponent = () => {
       setMovie(null)
       toast.dismiss()
    }
-   console.log(trailer)
+   console.log(movie)
    return (
       <MuiModal
          open={showModal}
@@ -96,6 +96,29 @@ const ModalComponent = () => {
                   playing
                   controls={true}
                />
+               <div className="absolute rounded-b-md bg-[#181818] px-10 py-8 w-full">
+                  <div className="flex">
+                     <p className="text-green-400">{movie?.vote_average * 10}% match</p> {" "}
+                     <p className="text-white ml-2">{movie?.first_air_date || movie?.release_date}</p>
+                     <div className="border-2 border-gray-400 ml-2 text-white px-2 text-xs flex items-center justify-center font-medium rounded-sm"><p>HD</p></div>
+                  </div>
+                  <div className="mt-2">
+                     <h2 className="text-white font-bold text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px]">
+                        {movie?.name || movie?.title || movie?.original_name}
+                     </h2>
+                     <h4 className="text-white mt-3 font-medium text-sm md:text-lg max-w-2xl">
+                        {movie?.overview}
+                     </h4>
+                     <div className="flex text-white mt-3 font-semibold text-sm md:text-lg max-w-2xl">
+                        <span className="mr-2 font-semibold">Genre:</span>
+                        {genres.map((genre: Genre) => genre.name).join(', ')}
+                     </div>
+                     <div className="flex text-white mt-3 font-semibold text-sm md:text-lg max-w-2xl">
+                        <span>Rating: {movie?.vote_average}/10</span>
+                        <span className="ml-5 text-green-400">Voted by: {movie?.vote_count} people</span>
+                     </div>
+                  </div>
+               </div>
             </div>
          </>
       </MuiModal>
