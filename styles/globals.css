@@ -80,17 +80,12 @@
    }
    /*End of Login Styles*/
 
-   .modal-body{
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 10;
-      width: 800px;
-      height: 600px;
-      background: black;
-      display: flex;
-      flex-direction: column;
-      color: #fff;
+   .modal::-webkit-scrollbar{
+      width:0px;
+      height:0px;
+   }
+
+   .modalButton{
+      @apply flex items-center justify-center rounded-full;
    }
 }

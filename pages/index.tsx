@@ -1,12 +1,12 @@
 import Head from 'next/head'
 import requests from '../utils/request'
-import {Movie, SectionTitle} from '../typing'
+import {Movie} from '../typing'
 
 //Components
 import Navbar from '../components/Home/Navbar'
 import Banner from '../components/Home/Banner'
 import RowSection from '../components/Home/RowSection'
-import Modal from '../components/Home/Modal'
+import ModalComponent from '../components/Home/ModalComponent'
 
 interface IProps { 
   netflixOriginals: Movie[]
@@ -18,7 +18,13 @@ interface IProps {
   romanceMovies: Movie[]
   documentaries: Movie[]
 }
+
+interface ModalMovie {
+  movieContent: Movie | null
+}
 const Home = ({netflixOriginals, topRated, trendingNow, actionMovies, romanceMovies, documentaries, comedyMovies, horrorMovies}: IProps) => {
+
+
   return (
     <div className="relative h-screen">
       <Head>
@@ -38,7 +44,7 @@ const Home = ({netflixOriginals, topRated, trendingNow, actionMovies, romanceMov
         <RowSection title="Horror Movies" movie={horrorMovies}/>
         <RowSection title="Documentaries" movie={documentaries}/>
       </main>
-      {/* <Modal/> */}
+      <ModalComponent/>
     </div>
   )
 }
