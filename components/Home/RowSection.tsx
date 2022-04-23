@@ -3,6 +3,8 @@ import {Movie} from '../../typing'
 import {movieBaseUrl as baseURL} from '../../utils/urls'
 import {MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight} from 'react-icons/md'
 import {useRef, useState} from 'react'
+import {useRecoilState} from 'recoil'
+import {movieState, modalState} from '../../atoms/modalAtom'
 interface IProps {
    movie: Movie[]
    title: string
@@ -11,6 +13,8 @@ interface IProps {
 const RowSection = ({movie, title}: IProps) => {
    const rowRef = useRef<HTMLDivElement>(null)
    const [isMoved, setIsMoved] = useState<boolean>(false)
+   const [current, setCurrentMovie] = useRecoilState(movieState)
+   const [showModal, setShowModal] = useRecoilState(modalState)
 
    //Function to move row section
    const handleClick = (direction: string) =>{
@@ -29,6 +33,7 @@ const RowSection = ({movie, title}: IProps) => {
          rowRef.current.scrollTo({left: scrollTo, behavior: "smooth"})
       }
    }
+
    return (
       <div className="relative text-white h-[300px] lg:h-[350px] py-2 px-5 mb-[30px] mt-[20px]">
          <h2 className="font-bold text-2xl lg:text-4xl">{title}</h2>
@@ -41,7 +46,12 @@ const RowSection = ({movie, title}: IProps) => {
             <div ref={rowRef} className="moviesContainer w-full mx-auto flex items-center justify-between overflow-x-scroll overflow-y-hidden cursor-pointer">
                {
                movie.map((show) => (
-                  <div className="relative min-w-300 h-[300px] mx-4 hover:scale-110 duration-75" key={show?.id}>
+                  <div
+                     onClick={() => {
+                        setCurrentMovie(show);
+                        setShowModal(true)
+                     }}
+                     className="relative min-w-300 h-[300px] mx-4 hover:scale-110 duration-75" key={show?.id}>
                      <Image src={`${baseURL}${show?.backdrop_path || show?.poster_path}`} alt="image" layout="fill" objectFit='contain' objectPosition="center"/>
                   </div>
                ))
