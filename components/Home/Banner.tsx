@@ -40,7 +40,7 @@ const Banner = ({netflixOriginals}:IProps) => {
          </p>
 
          <div className="mt-5 z-[3] flex pl-10">
-            <button className="bannerBtn bg-white rounded-md font-bold text-xl hover:opacity-80 duration-75 mr-4">
+            <button onClick={handleModal} className="bannerBtn bg-white rounded-md font-bold text-xl hover:opacity-80 duration-75 mr-4">
                <FaPlay className="bannerBtnIcon" fontSize={20}/> Play
             </button>
             <button onClick={handleModal} className="bannerBtn rounded-md font-bold text-xl text-white bg-[#4C4341] hover:opacity-80 duration-75 ml-4">
